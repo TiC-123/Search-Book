@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bg"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/homeConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:background="?attr/bg"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textHome"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="50dp"
+            android:text="Hai, mau cari buku apa hari ini?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/inputText"
+            android:layout_width="378dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:hint="Masukkan kata kunci pencarian">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/buttonCari"
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="?attr/backgroundTint"
+            android:text="CARI" />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FAEBD2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/bg"
+                app:layout_constraintBottom_toTopOf="@id/bookFavoriteView"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Buku Favoritku"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lihatBookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="53dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Lihat Semua"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookFavoriteView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/bg"
+                app:layout_constraintBottom_toTopOf="@id/constraintLayout2"
+                app:layout_constraintTop_toBottomOf="@id/constraint1"
+                tools:listitem="@layout/book_recycler" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:background="?attr/bg"
+                app:layout_constraintBottom_toTopOf="@id/bookRecommendedView"
+                app:layout_constraintTop_toBottomOf="@id/bookFavoriteView">
+
+                <TextView
+                    android:id="@+id/Rec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="45dp"
+                    android:text="Rekomendasi"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lihatRekomendasi"
+                    android:layout_width="85dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="53dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Lihat Semua"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookRecommendedView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/bg"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+                tools:layout_editor_absoluteX="0dp"
+                tools:listitem="@layout/book_recycler" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

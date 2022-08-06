@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bg"
+    android:orientation="vertical"
+    tools:context=".activity.BookmarkActivity">
+
+    <LinearLayout
+        android:id="@+id/homeBookmark"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:background="?attr/bg"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textBookmark"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="50dp"
+            android:text="Mau lihat buku apa?"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/inputBookmark"
+            android:layout_width="378dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            android:hint="Masukkan kata kunci pencarian"></EditText>
+
+        <Button
+            android:id="@+id/buttonBookmark"
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="?attr/backgroundTint"
+            android:text="CARI" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookBookmarkView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/bg"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/book_recycler" />
+</LinearLayout>

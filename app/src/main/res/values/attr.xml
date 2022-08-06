@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="dt">
+        <attr name="bg" format="color"/>
+        <attr name="cardbg" format="color"/>
+        <attr name="TextColor" format="color"/>
+        <attr name="judulcolor" format="color"/>
+        <attr name="backgroundTint" format="color"/>
+    </declare-styleable>
+</resources>
